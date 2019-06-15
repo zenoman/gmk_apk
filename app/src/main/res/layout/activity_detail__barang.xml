@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/putih"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.Detail_Barang">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        android:background="@color/butoon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/jdlbarang"
+            android:text="Barang"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.Toolbar>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/load_gambar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/load_produk" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_detail_image"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/barang"
+            android:text="Barang"
+            android:textColor="@color/pink"
+            android:textSize="23sp"
+            android:fontFamily="@font/cmftb"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="Harga"
+            android:layout_margin="5dp"
+            android:id="@+id/Harga"
+            android:textSize="15sp"
+            android:textColor="@color/hitam"
+            android:fontFamily="@font/clb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/butoon"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/pil_var"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/cmftb"
+                android:textColor="@color/hitam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/kodev"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:id="@+id/cvr"
+                android:textSize="11sp"
+                android:fontFamily="@font/clb"
+                android:textColor="@color/hitam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_varian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:id="@+id/ly_csize"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Pilih Size"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/cmftb"
+                android:textColor="@color/hitam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/kodesz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:id="@+id/size"
+                android:textSize="11sp"
+                android:fontFamily="@font/clb"
+                android:textColor="@color/hitam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_csize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+           `<TextView
+                android:layout_weight="1"
+                android:text="Stok Tersedia"
+                android:textSize="17sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/hitam"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/cmftb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/stok"
+                android:layout_weight="1"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/cmftb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/abu"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:fontFamily="@font/clb"
+            android:textSize="12sp"
+            android:textColor="@color/hitam"
+            android:text="Jumlah Pesan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            app:textSize="9sp"
+            app:backGroundColor="@color/hitam"
+            android:id="@+id/qty"
+            app:initialNumber="1"
+            app:finalNumber="100"
+            android:layout_width="100dp"
+            android:layout_height="30dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/butoon"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <LinearLayout
+            android:layout_margin="7dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/check"
+                android:text="Checkout"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/putih"
+                android:backgroundTint="@color/pink"
+                android:drawableLeft="@drawable/ic_heart_w"
+                android:textAllCaps="false"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/butoon"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <TextView
+            android:textColor="@color/hitam"
+            android:text="Deskripsi"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/cmftb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/deskripsi"
+            android:layout_margin="5dp"
+            android:textAlignment="center"
+            android:text="@string/lorem"
+            android:textSize="17sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/butoon"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

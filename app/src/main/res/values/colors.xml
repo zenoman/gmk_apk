@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="hitam">#000000</color>
+    <color name="merah">#FF0101</color>
+    <color name="merahMaroon">#C30F42</color>
+    <color name="putih">#ffffff</color>
+    <color name="abu">#F0F0F0</color>
+    <color name="darkabu">#616161</color>
+    <color name="abugelap">#4C4A48</color>
+    <color name="merahtua">#940930</color>
+    <color name="hijauWA">#4BC75A</color>
+    <color name="kuning">#FFCE45</color>
+    <color name="flic">#58A899</color>
+    <color name="placeholder_bg">#dddddd</color>
+    <color name="butoon">#E5F1FB</color>
+    <color name="pink">#C30F42</color>
+
+</resources>

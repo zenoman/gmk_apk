@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Store Tulungagung</string>
+    <string name="short_name">ST</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_title">Login ST</string>
+    <string name="reg">Daftar Member</string>
+    <string name="lengkap">Setalah Berhasil Daftar Segera Lengkapi Profile Anda (Nama, alamat, Kota/Kabupaten, Kode Pos, Provinsi) Agar Bisa Melakukan Transaksi</string>
+    <string name="akun">Ubah Profile</string>
+    <string name="ubahpass">Ubah Password</string>
+    <string name="info">Pusat Bantuan</string>
+    <string name="usern">Username</string>
+    <string name="passn">Password</string>
+    <string name="emailn">Email</string>
+    <string name="telpn">No. Telp</string>
+    <string name="naman">Nama Lengkap</string>
+    <string name="alamatn">Alamat</string>
+    <string name="kotan">Kota/Kabupaten</string>
+    <string name="posn">Kode Pos</string>
+    <string name="provn">Provinsi</string>
+    <string name="passw">Password(Kosongkan Bila Tidak Ingin mengganti Password)</string>
+    <string name="lorem">Lorem Ipsum Dolor sit Amet adalah sebagai Pengisi Daerah Kosong Untuk Label Dan Edit text</string>
+    <string name="pil_var">Pilihan Varian</string>
+    <string name="habis"> Item Belum Tersedia </string>
+    <string name="empty_cart">Belum ada Pesanan</string>
+    <string name="empty_trans">Belum Ada Transaksi</string>
+
+</resources>

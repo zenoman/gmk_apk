@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/putih"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="3dp"
+        android:scaleType="fitXY" />
+    <TextView
+        android:id="@+id/link_image"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/kode"
+                android:visibility="gone"
+                android:text="Kode Barang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/barang"
+                android:fontFamily="@font/clb"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Barang"
+                android:textColor="@color/pink"
+                android:textSize="12sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/harga"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Harga"
+                android:fontFamily="@font/clb"
+                android:textSize="11sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/down"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:backgroundTint="@color/butoon"
+                android:src="@drawable/ic_arrowdown"
+                android:text="Download"
+                android:textAllCaps="false" />
+
+            <ImageButton
+                android:src="@drawable/ic_share"
+                android:id="@+id/share"
+                android:backgroundTint="@color/butoon"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/Beli"
+                android:text="Lihat"
+                android:textAllCaps="false"
+                android:textColor="@color/putih"
+                android:background="@drawable/rounded_button"
+                android:backgroundTintMode="add"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

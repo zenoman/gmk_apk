@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="textAllCaps">false</item>
+    </style>
+    <style name="fontMenuBawah" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/mandali</item>
+    </style>
+    <style name="AppTheme.branded" parent="AppTheme">
+        <item name="android:windowBackground">@color/abu</item>
+    </style>
+    <style name="NoCaps" parent="Widget.AppCompat.ActionButton">
+        <item name="textAllCaps">false</item>
+    </style>
+</resources>

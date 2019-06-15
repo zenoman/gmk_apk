@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/butoon"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:text="@string/app_name"
+            android:fontFamily="@font/clb"
+            android:textSize="15sp"
+            android:textColor="@color/pink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.Toolbar>
+    <FrameLayout
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/menu_bawah"
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <android.support.design.widget.BottomNavigationView
+        android:layout_alignParentBottom="true"
+        android:theme="@style/fontMenuBawah"
+        android:id="@+id/menu_bawah"
+        app:menu="@menu/menu_bawah"
+        android:background="@color/butoon"
+        app:itemIconTint="@drawable/item_select"
+        app:itemTextColor="@drawable/item_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/usern"
+            android:fontFamily="@font/clb"
+            android:textSize="12sp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:enabled="false"
+            android:id="@+id/username"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/rounded_editext"
+            android:padding="4dp"
+            android:textSize="12sp"
+            android:hint="Masukan Username"
+            android:fontFamily="@font/clb"
+            android:layout_width="300dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:text="@string/telpn"
+            android:fontFamily="@font/clb"
+            android:textSize="12sp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:enabled="false"
+            android:id="@+id/telp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/rounded_editext"
+            android:padding="4dp"
+            android:textSize="12sp"
+            android:hint="No. Telp"
+            android:fontFamily="@font/clb"
+            android:layout_width="300dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:text="@string/passn"
+            android:fontFamily="@font/clb"
+            android:textSize="12sp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/pass"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/rounded_editext"
+            android:padding="4dp"
+            android:textSize="12sp"
+            android:hint="Password"
+            android:fontFamily="@font/clb"
+            android:layout_width="300dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:text="@string/emailn"
+            android:fontFamily="@font/clb"
+            android:textSize="12sp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:enabled="false"
+            android:id="@+id/email"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/rounded_editext"
+            android:padding="4dp"
+            android:textSize="12sp"
+            android:hint="Email"
+            android:fontFamily="@font/clb"
+            android:layout_width="300dp"
+            android:layout_height="40dp" />
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_simpan"
+                android:text="Simpan"
+                android:textAllCaps="false"
+                android:textColor="@color/putih"
+                android:fontFamily="@font/clb"
+                android:layout_margin="5dp"
+                android:textSize="12sp"
+                android:background="@drawable/rounded_button"
+                android:layout_width="150dp"
+                android:layout_height="40dp" />
+            <Button
+                android:id="@+id/btn_kembali"
+                android:text="Kembali"
+                android:textAllCaps="false"
+                android:fontFamily="@font/clb"
+                android:layout_margin="5dp"
+                android:textSize="12sp"
+                android:background="@drawable/rounded_button_default"
+                android:layout_width="150dp"
+                android:layout_height="40dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

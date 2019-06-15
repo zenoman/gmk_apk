@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/katalog"
+        android:title="Katalog"
+        android:icon="@drawable/ic_grids"/>
+    <item
+        android:id="@+id/baru"
+        android:title="Baru"
+        android:icon="@drawable/ic_heart"/>
+    <item
+        android:id="@+id/pemesanan"
+        android:title="Keranjang"
+        android:icon="@drawable/ic_layers"/>
+    <item
+        android:id="@+id/transaksi"
+        android:title="Transaksi"
+        android:icon="@drawable/ic_quote"/>
+    <item
+        android:id="@+id/akun"
+        android:title="Profile"
+        android:icon="@drawable/ic_settings"/>
+</menu>

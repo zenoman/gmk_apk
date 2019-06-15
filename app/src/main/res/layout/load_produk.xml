@@ -1,0 +1,12 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:background="@color/placeholder_bg"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="3dp"
+        android:scaleType="fitXY" />
+</LinearLayout>
