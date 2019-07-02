@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Store Tulungagung</string>
-    <string name="short_name">ST</string>
+    <string name="app_name">Grosir Murah Kediri</string>
+    <string name="short_name">GMK</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="login_title">Login ST</string>
+    <string name="login_title">Login GMK</string>
     <string name="reg">Daftar Member</string>
     <string name="lengkap">Setalah Berhasil Daftar Segera Lengkapi Profile Anda (Nama, alamat, Kota/Kabupaten, Kode Pos, Provinsi) Agar Bisa Melakukan Transaksi</string>
     <string name="akun">Ubah Profile</string>
@@ -25,5 +25,7 @@
     <string name="habis"> Item Belum Tersedia </string>
     <string name="empty_cart">Belum ada Pesanan</string>
     <string name="empty_trans">Belum Ada Transaksi</string>
+    <string name="lfb">Login Facebook</string>
+    <string name="lgp">Login Google</string>
 
 </resources>

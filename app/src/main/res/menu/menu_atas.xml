@@ -3,18 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/cari"
-        android:icon="@drawable/ic_search"
+        android:icon="@drawable/ic_search_putih"
         android:title="Cari Apa.."
+        android:iconTint="@color/putih"
         app:showAsAction="always"/>
     <item
         android:id="@+id/chat"
         android:title="Chat Admin"
-        android:icon="@drawable/ic_comments"
+        android:iconTint="@color/putih"
+        android:icon="@drawable/ic_commenting_putih"
         app:showAsAction="always"
         />
     <item
         android:id="@+id/login"
         android:title="Login"
+        android:icon="@drawable/ic_sign_in"
         app:showAsAction="always"/>
 
 </menu>

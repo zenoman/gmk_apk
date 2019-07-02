@@ -7,7 +7,7 @@
     tools:context=".User.Register">
     <LinearLayout
         android:id="@+id/head"
-        android:background="@color/butoon"
+        android:background="@color/bir"
         android:gravity="center"
         android:padding="20dp"
         android:orientation="horizontal"
@@ -18,7 +18,8 @@
             android:text="Sudah Jadi Member?"
             android:textSize="15sp"
             android:gravity="center"
-            android:fontFamily="@font/cmftr"
+            android:fontFamily="@font/asap"
+            android:textColor="@color/putih"
             android:textAlignment="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -27,10 +28,10 @@
             android:id="@+id/login"
             android:text="Login Disini!"
             android:textSize="15sp"
-            android:textColor="@color/pink"
+            android:textColor="@color/putih"
             android:layout_gravity="start"
             android:clickable="true"
-            android:fontFamily="@font/cmftb"
+            android:fontFamily="@font/asap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -47,8 +48,9 @@
         <TextView
             android:text="@string/reg"
             android:textAlignment="center"
-            android:fontFamily="@font/clb"
-            android:textSize="14sp"
+            android:fontFamily="@font/asap"
+            android:textSize="25sp"
+            android:textColor="@color/hitam"
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
         <View
@@ -58,10 +60,11 @@
             android:layout_height="2dp"/>
         <TextView
             android:text="Username"
-            android:fontFamily="@font/clb"
+            android:fontFamily="@font/asap"
+            android:textColor="@color/hitam"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:textSize="12sp"
+            android:textSize="15sp"
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
         <EditText
@@ -76,10 +79,11 @@
             android:layout_height="40dp" />
         <TextView
             android:text="No. Telepon"
+            android:fontFamily="@font/asap"
+            android:textColor="@color/hitam"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:textSize="12sp"
-            android:fontFamily="@font/clb"
+            android:textSize="15sp"
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
         <EditText
@@ -95,9 +99,10 @@
         <TextView
             android:text="Email"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/asap"
+            android:textColor="@color/hitam"
             android:textStyle="bold"
-            android:textSize="12sp"
-            android:fontFamily="@font/clb"
+            android:textSize="15sp"
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
         <EditText
@@ -112,10 +117,11 @@
             android:layout_height="40dp" />
         <TextView
             android:text="Buat Kata Sandi"
+            android:fontFamily="@font/asap"
+            android:textColor="@color/hitam"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:textSize="12sp"
-            android:fontFamily="@font/clb"
+            android:textSize="15sp"
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
         <EditText
@@ -140,15 +146,16 @@
         <TextView
             android:text="@string/lengkap"
             android:padding="10dp"
-            android:textSize="10sp"
-            android:fontFamily="@font/clb"
+            android:textSize="12sp"
+            android:fontFamily="@font/mandali"
             android:layout_marginTop="5dp"
             android:textAlignment="center"
             android:layout_width="300dp"
+            android:textColor="@color/hitam"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/back"
-            android:textColor="@color/pink"
+            android:textColor="@color/bir"
             android:padding="5dp"
             android:textStyle="bold"
             android:text="Kembali Ke Login"

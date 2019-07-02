@@ -3,21 +3,21 @@
     <item
         android:id="@+id/katalog"
         android:title="Katalog"
-        android:icon="@drawable/ic_grids"/>
+        android:icon="@drawable/ic_delicious"/>
     <item
         android:id="@+id/baru"
         android:title="Baru"
-        android:icon="@drawable/ic_heart"/>
+        android:icon="@drawable/ic_bookmark"/>
     <item
         android:id="@+id/pemesanan"
         android:title="Keranjang"
-        android:icon="@drawable/ic_layers"/>
+        android:icon="@drawable/ic_opencart"/>
     <item
         android:id="@+id/transaksi"
         android:title="Transaksi"
-        android:icon="@drawable/ic_quote"/>
+        android:icon="@drawable/ic_shopping_basket"/>
     <item
         android:id="@+id/akun"
         android:title="Profile"
-        android:icon="@drawable/ic_settings"/>
+        android:icon="@drawable/ic_street_view"/>
 </menu>

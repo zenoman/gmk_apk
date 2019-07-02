@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="project.com.tastore_laris">
+    package="project.com.gmklabel">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,26 +13,31 @@
     <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_two"
+        tools:node="replace"
+        android:icon="@mipmap/ic_launcher_gmk"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_two"
+        android:roundIcon="@mipmap/ic_launcher_gmk"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <activity android:name="project.com.tastore_laris.fragment.Cari_Barang" />
-        <activity android:name="project.com.tastore_laris.fragment.Detail_Barang" />
-        <activity android:name="project.com.tastore_laris.fragment.Detail_kategori" />
-        <activity android:name="project.com.tastore_laris.User.Bantuan" />
-        <activity android:name="project.com.tastore_laris.User.Register" />
-        <activity android:name="project.com.tastore_laris.User.Login" android:noHistory="true" />
-        <activity android:name="project.com.tastore_laris.MainActivity" />
-        <activity android:name="project.com.tastore_laris.welcome" android:noHistory="true" android:theme="@style/AppTheme.branded">
+        <activity android:name="project.com.gmklabel.fragment.Cari_Barang" />
+        <activity android:name="project.com.gmklabel.fragment.Detail_Barang" />
+        <activity android:name="project.com.gmklabel.fragment.Detail_kategori" />
+        <activity android:name="project.com.gmklabel.User.Bantuan" />
+        <activity android:name="project.com.gmklabel.User.Register" />
+        <activity android:name="project.com.gmklabel.User.Login" android:noHistory="true" />
+        <activity android:name="project.com.gmklabel.MainActivity" />
+        <activity android:name="project.com.gmklabel.welcome" android:noHistory="true" android:theme="@style/AppTheme.branded">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
