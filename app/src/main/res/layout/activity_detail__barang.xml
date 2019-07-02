@@ -16,6 +16,7 @@
         <TextView
             android:id="@+id/jdlbarang"
             android:text="Barang"
+            android:textColor="@color/hitam"
             android:textSize="17sp"
             android:textStyle="bold"
             android:layout_width="match_parent"
@@ -51,7 +52,7 @@
             android:layout_marginBottom="5dp"
             android:id="@+id/barang"
             android:text="Barang"
-            android:textColor="@color/pink"
+            android:textColor="@color/hitam"
             android:textSize="23sp"
             android:fontFamily="@font/cmftb"
             android:textStyle="bold"

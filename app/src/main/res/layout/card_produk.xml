@@ -40,7 +40,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="Barang"
-                android:textColor="@color/pink"
+                android:textColor="@color/merahMaroon"
                 android:textSize="12sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

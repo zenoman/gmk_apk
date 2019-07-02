@@ -12,9 +12,9 @@
         android:layout_height="300dp" />
     <TextView
         android:text="@string/habis"
-        android:fontFamily="@font/noahnicole"
-        android:textSize="30sp"
-        android:textColor="@color/pink"
+        android:fontFamily="@font/mandali"
+        android:textSize="17sp"
+        android:textColor="@color/hitam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

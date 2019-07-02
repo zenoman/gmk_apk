@@ -35,7 +35,7 @@
                 android:clickable="true"
                 android:fontFamily="@font/cmftb"
                 android:text="Daftar Disini!"
-                android:textColor="@color/pink"
+                android:textColor="@color/hitam"
                 android:textSize="15sp" />
         </LinearLayout>
     <android.support.v4.widget.NestedScrollView
@@ -54,7 +54,7 @@
             android:padding="5dp"
             android:text="@string/login_title"
             android:fontFamily="@font/clr"
-            android:textColor="@color/pink"
+            android:textColor="@color/hitam"
             android:textSize="25sp"
             android:textAlignment="center"
             android:layout_width="match_parent"

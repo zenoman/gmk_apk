@@ -12,9 +12,9 @@
         android:layout_height="50dp">
         <TextView
             android:text="@string/app_name"
-            android:fontFamily="@font/clb"
-            android:textSize="15sp"
-            android:textColor="@color/pink"
+            android:fontFamily="@font/mandali"
+            android:textSize="19sp"
+            android:textColor="@color/hitam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </android.support.v7.widget.Toolbar>
