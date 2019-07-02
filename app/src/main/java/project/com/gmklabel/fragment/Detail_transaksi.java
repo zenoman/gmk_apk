@@ -1,4 +1,4 @@
-package project.com.tastore_laris.fragment;
+package project.com.gmklabel.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -15,13 +15,13 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.List;
 
-import project.com.tastore_laris.Config.env;
-import project.com.tastore_laris.Konstruktor.Json_keranjang;
-import project.com.tastore_laris.MainActivity;
-import project.com.tastore_laris.Model.Model;
-import project.com.tastore_laris.Model.Respon_Keranjang;
-import project.com.tastore_laris.R;
-import project.com.tastore_laris.adapter.Adapter_Detail;
+import project.com.gmklabel.Config.env;
+import project.com.gmklabel.Konstruktor.Json_keranjang;
+import project.com.gmklabel.MainActivity;
+import project.com.gmklabel.Model.Model;
+import project.com.gmklabel.Model.Respon_Keranjang;
+import project.com.gmklabel.R;
+import project.com.gmklabel.adapter.Adapter_Detail;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

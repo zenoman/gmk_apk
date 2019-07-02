@@ -1,4 +1,4 @@
-package project.com.tastore_laris.Konstruktor;
+package project.com.gmklabel.Konstruktor;
 
 public class Json_gambar {
     private String id,kode_barang,nama;

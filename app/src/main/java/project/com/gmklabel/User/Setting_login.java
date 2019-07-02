@@ -1,4 +1,4 @@
-package project.com.tastore_laris.User;
+package project.com.gmklabel.User;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -13,12 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import project.com.tastore_laris.Config.env;
-import project.com.tastore_laris.Konstruktor.User_info;
-import project.com.tastore_laris.Model.Model;
-import project.com.tastore_laris.Model.Respon_User;
-import project.com.tastore_laris.R;
-import project.com.tastore_laris.fragment.Profile;
+import project.com.gmklabel.Config.env;
+import project.com.gmklabel.Konstruktor.User_info;
+import project.com.gmklabel.Model.Model;
+import project.com.gmklabel.Model.Respon_User;
+import project.com.gmklabel.R;
+import project.com.gmklabel.fragment.Profile;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

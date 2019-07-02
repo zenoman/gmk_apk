@@ -1,4 +1,4 @@
-package project.com.tastore_laris.adapter;
+package project.com.gmklabel.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -15,11 +15,11 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-import project.com.tastore_laris.Config.env;
-import project.com.tastore_laris.Konstruktor.Json_keranjang;
-import project.com.tastore_laris.MainActivity;
-import project.com.tastore_laris.R;
-import project.com.tastore_laris.fragment.Keranjang;
+import project.com.gmklabel.Config.env;
+import project.com.gmklabel.Konstruktor.Json_keranjang;
+import project.com.gmklabel.MainActivity;
+import project.com.gmklabel.R;
+import project.com.gmklabel.fragment.Keranjang;
 
 public class Adapter_Detail extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Json_keranjang> list=new ArrayList<>();

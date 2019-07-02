@@ -1,4 +1,4 @@
-package project.com.tastore_laris.Konstruktor;
+package project.com.gmklabel.Konstruktor;
 
 public class Json_keranjang {
     private String id,idwarna,iduser,faktur,tgl,tgl_kadaluarsa,kode_barang,barang,harga,jumlah,total_a,diskon,total,admin,metode,warna,nama,varian;

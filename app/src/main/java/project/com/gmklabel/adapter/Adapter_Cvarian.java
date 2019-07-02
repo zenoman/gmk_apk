@@ -1,4 +1,4 @@
-package project.com.tastore_laris.adapter;
+package project.com.gmklabel.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,9 +11,9 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
-import project.com.tastore_laris.Konstruktor.Json_Cvarian;
-import project.com.tastore_laris.Model.RecyclerViewClickListener;
-import project.com.tastore_laris.R;
+import project.com.gmklabel.Konstruktor.Json_Cvarian;
+import project.com.gmklabel.Model.RecyclerViewClickListener;
+import project.com.gmklabel.R;
 
 public class Adapter_Cvarian extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;

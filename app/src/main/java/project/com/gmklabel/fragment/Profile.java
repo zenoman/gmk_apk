@@ -1,4 +1,4 @@
-package project.com.tastore_laris.fragment;
+package project.com.gmklabel.fragment;
 
 
 import android.content.Context;
@@ -13,12 +13,12 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import project.com.tastore_laris.R;
-import project.com.tastore_laris.User.Login;
-import project.com.tastore_laris.User.Register;
-import project.com.tastore_laris.User.Setting_Profile;
-import project.com.tastore_laris.User.Setting_login;
-import project.com.tastore_laris.User.User_config;
+import project.com.gmklabel.R;
+import project.com.gmklabel.User.Login;
+import project.com.gmklabel.User.Register;
+import project.com.gmklabel.User.Setting_Profile;
+import project.com.gmklabel.User.Setting_login;
+import project.com.gmklabel.User.User_config;
 
 /**
  * A simple {@link Fragment} subclass.

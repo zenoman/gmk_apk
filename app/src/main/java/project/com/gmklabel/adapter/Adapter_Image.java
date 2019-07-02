@@ -1,4 +1,4 @@
-package project.com.tastore_laris.adapter;
+package project.com.gmklabel.adapter;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -19,11 +19,11 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-import project.com.tastore_laris.Config.env;
-import project.com.tastore_laris.Konstruktor.Json_Produk;
-import project.com.tastore_laris.R;
-import project.com.tastore_laris.fragment.Detail_Barang;
-import project.com.tastore_laris.fragment.zoom_image;
+import project.com.gmklabel.Config.env;
+import project.com.gmklabel.Konstruktor.Json_Produk;
+import project.com.gmklabel.R;
+import project.com.gmklabel.fragment.Detail_Barang;
+import project.com.gmklabel.fragment.zoom_image;
 
 public class Adapter_Image extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 private List<Json_Produk> gambarList=new ArrayList<>();

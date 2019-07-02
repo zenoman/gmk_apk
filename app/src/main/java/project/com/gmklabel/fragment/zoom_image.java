@@ -1,4 +1,4 @@
-package project.com.tastore_laris.fragment;
+package project.com.gmklabel.fragment;
 
 
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
-import project.com.tastore_laris.R;
+import project.com.gmklabel.R;
 
 /**
  * A simple {@link Fragment} subclass.

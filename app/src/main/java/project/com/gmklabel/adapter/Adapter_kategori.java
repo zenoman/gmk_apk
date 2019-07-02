@@ -1,4 +1,4 @@
-package project.com.tastore_laris.adapter;
+package project.com.gmklabel.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,10 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import project.com.tastore_laris.Config.env;
-import project.com.tastore_laris.Konstruktor.Json_kategori;
-import project.com.tastore_laris.R;
-import project.com.tastore_laris.fragment.Detail_kategori;
+import project.com.gmklabel.Config.env;
+import project.com.gmklabel.Konstruktor.Json_kategori;
+import project.com.gmklabel.R;
+import project.com.gmklabel.fragment.Detail_kategori;
 
 public class Adapter_kategori extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 private env db=new env();

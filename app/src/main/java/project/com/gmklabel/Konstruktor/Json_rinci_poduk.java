@@ -1,4 +1,4 @@
-package project.com.tastore_laris.Konstruktor;
+package project.com.gmklabel.Konstruktor;
 
 public class Json_rinci_poduk {
     private String idbarang,kode,stok,warna,barang_jenis;

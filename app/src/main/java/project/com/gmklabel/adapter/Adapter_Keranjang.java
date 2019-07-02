@@ -1,4 +1,4 @@
-package project.com.tastore_laris.adapter;
+package project.com.gmklabel.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -16,15 +16,15 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-import project.com.tastore_laris.Config.env;
-import project.com.tastore_laris.Konstruktor.Json_keranjang;
-import project.com.tastore_laris.Konstruktor.User_info;
-import project.com.tastore_laris.MainActivity;
-import project.com.tastore_laris.Model.Model;
-import project.com.tastore_laris.Model.Respon_Keranjang;
-import project.com.tastore_laris.R;
-import project.com.tastore_laris.User.User_config;
-import project.com.tastore_laris.fragment.Keranjang;
+import project.com.gmklabel.Config.env;
+import project.com.gmklabel.Konstruktor.Json_keranjang;
+import project.com.gmklabel.Konstruktor.User_info;
+import project.com.gmklabel.MainActivity;
+import project.com.gmklabel.Model.Model;
+import project.com.gmklabel.Model.Respon_Keranjang;
+import project.com.gmklabel.R;
+import project.com.gmklabel.User.User_config;
+import project.com.gmklabel.fragment.Keranjang;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

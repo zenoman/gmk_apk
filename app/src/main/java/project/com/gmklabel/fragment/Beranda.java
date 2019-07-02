@@ -1,4 +1,4 @@
-package project.com.tastore_laris.fragment;
+package project.com.gmklabel.fragment;
 
 
 import android.content.Context;
@@ -16,19 +16,19 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.List;
 
-import project.com.tastore_laris.Config.env;
-import project.com.tastore_laris.Konstruktor.Json_Produk;
-import project.com.tastore_laris.Konstruktor.Json_Promo;
-import project.com.tastore_laris.Konstruktor.Json_kategori;
-import project.com.tastore_laris.MainActivity;
-import project.com.tastore_laris.Model.Model;
-import project.com.tastore_laris.Model.Respon_Kategori;
-import project.com.tastore_laris.Model.Respon_Produk;
-import project.com.tastore_laris.Model.Respon_Promo;
-import project.com.tastore_laris.R;
-import project.com.tastore_laris.adapter.Adapter_kategori;
-import project.com.tastore_laris.adapter.Adapter_produk;
-import project.com.tastore_laris.adapter.Adapter_promo;
+import project.com.gmklabel.Config.env;
+import project.com.gmklabel.Konstruktor.Json_Produk;
+import project.com.gmklabel.Konstruktor.Json_Promo;
+import project.com.gmklabel.Konstruktor.Json_kategori;
+import project.com.gmklabel.MainActivity;
+import project.com.gmklabel.Model.Model;
+import project.com.gmklabel.Model.Respon_Kategori;
+import project.com.gmklabel.Model.Respon_Produk;
+import project.com.gmklabel.Model.Respon_Promo;
+import project.com.gmklabel.R;
+import project.com.gmklabel.adapter.Adapter_kategori;
+import project.com.gmklabel.adapter.Adapter_produk;
+import project.com.gmklabel.adapter.Adapter_promo;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
