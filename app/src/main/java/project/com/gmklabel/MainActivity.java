@@ -65,6 +65,7 @@ private Context context;
 private env db=new env();
 private  boolean doublePress=false;
 public static  boolean aktif=false;
+public static final String GOOGLE_ACCOUNT = "google_account";
     //private TapTargetSequence sequence;
 private TapTargetSequence sequence;
     @Override

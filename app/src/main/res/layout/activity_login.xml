@@ -141,12 +141,11 @@
             android:textAllCaps="false"
             android:textColor="@color/putih"
             android:textSize="15sp" />
-        <Button
+        <com.google.android.gms.common.SignInButton
             android:id="@+id/btngp"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gplus"
             android:text="@string/lgp"
             android:textAllCaps="false"
             android:textColor="@color/putih"
