@@ -33,24 +33,26 @@
                 android:text="Kode Barang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
             <TextView
                 android:id="@+id/barang"
-                android:fontFamily="@font/clb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="@font/clb"
                 android:text="Barang"
-                android:textColor="@color/merahMaroon"
-                android:textSize="12sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textStyle="bold"
+                android:textColor="@color/bir"
+                android:textSize="17sp" />
             <TextView
                 android:id="@+id/harga"
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="Harga"
                 android:fontFamily="@font/clb"
-                android:textSize="11sp"
+                android:textSize="15sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>

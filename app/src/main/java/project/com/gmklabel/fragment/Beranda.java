@@ -3,6 +3,7 @@ package project.com.gmklabel.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -80,7 +81,7 @@ private int total=0,page=1;
             rv_kat.setItemAnimator(new DefaultItemAnimator());
 
             rv_promo=(RecyclerView) view.findViewById(R.id.rv_promo);
-            manager_pro=new GridLayoutManager(context,1,GridLayoutManager.VERTICAL,false);
+            manager_pro=new GridLayoutManager(context,1,GridLayoutManager.HORIZONTAL,false);
             adapter_promo=new Adapter_promo(context);
             rv_promo.setAdapter(adapter_promo);
             rv_promo.setLayoutManager(manager_pro);
@@ -169,6 +170,7 @@ private int total=0,page=1;
                     load_pro.setVisibility(View.GONE);
                     promoList=response.body().getData();
                     adapter_promo.addall(promoList);
+                    runslider();
                 }
                 if(MainActivity.aktif==false){
                     call.cancel();
@@ -182,6 +184,30 @@ private int total=0,page=1;
                 }
             }
         });
+    }
+
+    private void runslider() {
+        final int spds=10000;
+        final Handler handler=new Handler();
+        Runnable runnable=new Runnable() {
+            int count=0;
+            boolean flag=true;
+            @Override
+            public void run() {
+                if(count<adapter_promo.getItemCount()){
+                    if(count==adapter_promo.getItemCount()-1){
+                        flag=false;
+                    }else if(count==0){
+                        flag=true;
+                    }
+                    if(flag) count++;
+                    else count--;
+                    rv_promo.smoothScrollToPosition(count);
+                    handler.postDelayed(this,spds);
+                }
+            }
+        };
+        handler.postDelayed(runnable,spds);
     }
 
     private void showKategori() {

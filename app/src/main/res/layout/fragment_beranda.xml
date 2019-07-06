@@ -12,34 +12,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-<android.support.v7.widget.CardView
-    android:layout_marginTop="5dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
- <TextView
-     android:text="Kategori"
-     android:textSize="17sp"
-     android:layout_marginLeft="5dp"
-     android:fontFamily="@font/cmftr"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content" />
-   <com.facebook.shimmer.ShimmerFrameLayout
-       android:id="@+id/load_kategori"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
-    <include layout="@layout/kategori_load"/>
-   </com.facebook.shimmer.ShimmerFrameLayout>
- <android.support.v7.widget.RecyclerView
-     android:layout_marginTop="5dp"
-     android:id="@+id/rv_kategori"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"/>
-</LinearLayout>
-</android.support.v7.widget.CardView>
  <android.support.v7.widget.CardView
      android:layout_marginTop="4dp"
      android:layout_width="match_parent"
@@ -53,6 +25,7 @@
          android:textSize="17sp"
          android:layout_marginLeft="5dp"
          android:fontFamily="@font/cmftr"
+         android:textStyle="bold"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content" />
      <com.facebook.shimmer.ShimmerFrameLayout
@@ -70,6 +43,34 @@
      android:layout_height="wrap_content"/>
  </LinearLayout>
  </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Kategori"
+                android:textSize="17sp"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/cmftr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/load_kategori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include layout="@layout/kategori_load"/>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginTop="5dp"
+                android:id="@+id/rv_kategori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
         android:layout_marginTop="4dp"
         android:layout_width="match_parent"

@@ -19,13 +19,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.Task;
+import com.kaopiz.kprogresshud.KProgressHUD;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,36 +54,45 @@ private EditText username,password;
 private CheckBox ck;
 private env db=new env();
 private GoogleSignInClient googleSignInClient;
-//private KProgressHUD dialog;
+private GoogleApiClient apiClient;
+private KProgressHUD dialog;
 private List<User_info> infoList=new ArrayList<>();
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == this.RESULT_OK)
-            switch (requestCode) {
-                case 101:
-                    try {
-                        // The Task returned from this call is always completed, no need to attach
-                        // a listener.
-                        Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-                        GoogleSignInAccount account = task.getResult(ApiException.class);
-                        onLoggedIn(account);
-                    } catch (ApiException e) {
-                        // The ApiException status code indicates the detailed failure reason.
-                        Log.w("pl", "signInResult:failed code=" + e.getStatusCode());
-                        onLoggedIn(null);
-                    }
-                    break;
-            }
+       if(requestCode==101){
+           GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+           handleSiginResult(result);
+       }
     }
 
-    private void onLoggedIn(GoogleSignInAccount account) {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra(MainActivity.GOOGLE_ACCOUNT, account);
-        startActivity(intent);
-        finish();
+    private void handleSiginResult(GoogleSignInResult result) {
+        Log.d("Error", "handleSignInResult:" + result.isSuccess());
+        if (result.isSuccess()) {
+            GoogleSignInAccount acct = result.getSignInAccount();
+            loginGP(acct);
+        }else {
+            Toast.makeText(this, "Login Gagal", Toast.LENGTH_SHORT).show();
+        }
     }
+
+//    private void handleSiginResult(Task<GoogleSignInAccount> task) {
+//        GoogleSignInAccount account = null;
+//        try {
+//            account = task.getResult(ApiException.class);
+//            // Signed in successfully, show authenticated UI.
+//            loginGP(account);
+//        } catch (ApiException e) {
+//            e.printStackTrace();
+//            Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
+//            loginGP(null);
+//        }
+//
+//    }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,17 +113,20 @@ private List<User_info> infoList=new ArrayList<>();
                 .requestEmail()
                 .build();
 // Build a GoogleSignInClient with the options specified by gso.
-        googleSignInClient = GoogleSignIn.getClient(this, gso);
+//        googleSignInClient = GoogleSignIn.getClient(this, gso);
+        apiClient = new GoogleApiClient.Builder(this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
 // Check for existing Google Sign In account, if the user is already signed in
 // the GoogleSignInAccount will be non-null.
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        onLoggedIn(account);
+
+//        loginGP(account);
 //        ====================================================================
 
         btngp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signInIntent = googleSignInClient.getSignInIntent();
+                Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(apiClient);
                 startActivityForResult(signInIntent, 101);
             }
         });
@@ -157,7 +173,6 @@ private List<User_info> infoList=new ArrayList<>();
     }
 
     private void cekLogin() {
-
 
     final Dialog dialog=new Dialog(Login.this);
     dialog.setContentView(R.layout.dialog_loading);
@@ -227,6 +242,99 @@ private List<User_info> infoList=new ArrayList<>();
         });
 
     }
+    private void loginGP(final GoogleSignInAccount account) {
+//         Cek Login Dulu
+        dialog=KProgressHUD.create(Login.this)
+                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                .setLabel("Tunggu Sebentar")
+                .setCancellable(true)
+                .setAnimationSpeed(2)
+                .setDimAmount(0.5f);
+//        Login
+        final String user,pass,email,telp;
+        user=account.getEmail();
+        pass=account.getEmail();
+        email=account.getEmail();
+        telp="-";
+        dialog.show();
+
+        Model model=db.getRespo().create(Model.class);
+        Call<Respon_User> call=model.userProfile(user,pass);
+        call.enqueue(new Callback<Respon_User>() {
+            @Override
+            public void onResponse(Call<Respon_User> call, Response<Respon_User> response) {
+                String msg=response.body().getMsg();
+                if(response.isSuccessful()){
+                    String st=response.body().getStatus();
+                    if(st.equals("1")){
+                        infoList=response.body().getData();
+                        for (int i=0;i<infoList.size();i++){
+                            User_info info=new User_info(
+                                    infoList.get(i).getId(),
+                                    infoList.get(i).getUsername(),
+                                    infoList.get(i).getPassword(),
+                                    infoList.get(i).getEmail(),
+                                    infoList.get(i).getTelp(),
+                                    infoList.get(i).getNama(),
+                                    infoList.get(i).getAlamat(),
+                                    infoList.get(i).getKota(),
+                                    infoList.get(i).getProvinsi(),
+                                    infoList.get(i).getKodepos(),
+                                    infoList.get(i).getLevel(),
+                                    infoList.get(i).getKtp_gmb()
+                            );
+                            Toast.makeText(Login.this,msg,Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                            User_config.getmInstance(Login.this).userLogin(info);
+                            startActivity(new Intent(Login.this,MainActivity.class));
+//                            finish();
+                        }
+                    }else if(st.equals("0")){
+                        dialog.dismiss();
+                        Toast.makeText(Login.this,msg,Toast.LENGTH_SHORT).show();
+                    }else if(st.equals("2")){
+//                        daftarkan User
+                        daftar(user,pass,email,telp,account);
+                        dialog.dismiss();
+                    }
+                }else{
+                    dialog.dismiss();
+                    Toast.makeText(Login.this,msg,Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Respon_User> call, Throwable t) {
+                dialog.dismiss();
+                Toast.makeText(Login.this,"Periksa Jaringan Internet Anda",Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void daftar(String user, String pass, String email, String tlp, final GoogleSignInAccount account) {
+        String usern,pas,emal,telp;
+        usern=user;
+        pas=pass;
+        emal=email;
+        telp=tlp;
+        Model model= db.getRespo().create(Model.class);
+        Call<Respon_User> call=model.register(usern,pas,emal,telp);
+        call.enqueue(new Callback<Respon_User>() {
+            @Override
+            public void onResponse(Call<Respon_User> call, Response<Respon_User> response) {
+                String msg=response.body().getMsg();
+                Toast.makeText(Login.this,msg,Toast.LENGTH_SHORT).show();
+                loginGP(account);
+            }
+
+            @Override
+            public void onFailure(Call<Respon_User> call, Throwable t) {
+                dialog.dismiss();
+                Toast.makeText(Login.this,"Periksa Jaringan Anda",Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
     @Override
     protected void onResume() {
@@ -240,5 +348,18 @@ private List<User_info> infoList=new ArrayList<>();
        // dialog.dismiss();
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+//        apiClient.disconnect();
+//        if(apiClient.isConnected()){
+//            apiClient.disconnect();
+//        }
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+//        apiClient.connect();
+    }
 }

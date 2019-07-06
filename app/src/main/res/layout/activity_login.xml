@@ -131,25 +131,13 @@
             android:layout_margin="3dp"
             android:layout_width="300dp"
             android:layout_height="2dp"/>
-        <Button
-            android:id="@+id/btnfb"
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/fb"
-            android:text="@string/lfb"
-            android:textAllCaps="false"
-            android:textColor="@color/putih"
-            android:textSize="15sp" />
+
         <com.google.android.gms.common.SignInButton
             android:id="@+id/btngp"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
-            android:text="@string/lgp"
-            android:textAllCaps="false"
-            android:textColor="@color/putih"
-            android:textSize="15sp" />
+            android:textColor="@color/putih" />
 
         <TextView
             android:id="@+id/btn_back"

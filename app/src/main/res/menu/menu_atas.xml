@@ -17,7 +17,6 @@
     <item
         android:id="@+id/login"
         android:title="Login"
-        android:icon="@drawable/ic_sign_in"
         app:showAsAction="always"/>
 
 </menu>

@@ -30,6 +30,8 @@ import android.widget.Toast;
 
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetSequence;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,6 +67,8 @@ private Context context;
 private env db=new env();
 private  boolean doublePress=false;
 public static  boolean aktif=false;
+private GoogleApiClient apiClient;
+
 public static final String GOOGLE_ACCOUNT = "google_account";
     //private TapTargetSequence sequence;
 private TapTargetSequence sequence;
@@ -83,6 +87,10 @@ private TapTargetSequence sequence;
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.frame, Beranda.newInstance())
                 .commit();
+//        google chek
+        apiClient=new GoogleApiClient.Builder(this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API)
+                .build();
         //Cek Version
         cekVersion();
         //strict Policy api 26
@@ -220,8 +228,11 @@ private TapTargetSequence sequence;
                     break;
                 }
             case R.id.login:
-                    if(User_config.getmInstance(MainActivity.this).isLogedIn()){
+                    if(User_config.getmInstance(MainActivity.this).isLogedIn()||apiClient.isConnected()==true){
                         User_config.getmInstance(MainActivity.this).logout();
+                        Auth.GoogleSignInApi.signOut(apiClient);
+                        apiClient.disconnect();
+                        apiClient.connect();
                         finish();
                         startActivity(new Intent(MainActivity.this, Login.class));
                     }else{
@@ -356,7 +367,7 @@ private TapTargetSequence sequence;
             if(User_config.getmInstance(MainActivity.this).isLogedIn()){
                 mnLogin.setTitle("Logout");
             }else{
-                mnLogin.setTitle("login");
+                mnLogin.setTitle("Login");
             }
         return super.onCreateOptionsMenu(menu);
 
@@ -414,12 +425,18 @@ private TapTargetSequence sequence;
     protected void onStop() {
         super.onStop();
         aktif=false;
+//       apiClient.disconnect();
+        if(apiClient.isConnected()){
+            apiClient.disconnect();
+        }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        apiClient.connect();
         aktif=true;
+
     }
 
     @Override

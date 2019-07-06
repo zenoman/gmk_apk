@@ -4,6 +4,10 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="textAllCaps">false</item>
+        <item name="actionMenuTextColor">#fff</item>
+        <item name="colorPrimary">@color/bir</item>
+        <item name="colorPrimaryDark">@color/bir</item>
+        <item name="colorAccent">@color/bir</item>
     </style>
     <style name="fontMenuBawah" parent="Widget.Design.BottomNavigationView">
         <item name="fontFamily">@font/mandali</item>
