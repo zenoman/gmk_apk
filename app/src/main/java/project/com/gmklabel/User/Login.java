@@ -57,41 +57,37 @@ private GoogleSignInClient googleSignInClient;
 private GoogleApiClient apiClient;
 private KProgressHUD dialog;
 private List<User_info> infoList=new ArrayList<>();
+    private static final int RC_SIGN_IN = 9001;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-       if(requestCode==101){
-           GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-           handleSiginResult(result);
-       }
-    }
-
-    private void handleSiginResult(GoogleSignInResult result) {
-        Log.d("Error", "handleSignInResult:" + result.isSuccess());
-        if (result.isSuccess()) {
-            GoogleSignInAccount acct = result.getSignInAccount();
-            loginGP(acct);
-        }else {
-            Toast.makeText(this, "Login Gagal", Toast.LENGTH_SHORT).show();
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);
         }
     }
 
-//    private void handleSiginResult(Task<GoogleSignInAccount> task) {
-//        GoogleSignInAccount account = null;
-//        try {
-//            account = task.getResult(ApiException.class);
-//            // Signed in successfully, show authenticated UI.
-//            loginGP(account);
-//        } catch (ApiException e) {
-//            e.printStackTrace();
-//            Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
-//            loginGP(null);
-//        }
-//
-//    }
+    private void handleSignInResult(Task<GoogleSignInAccount> task) {
+        try {
+            GoogleSignInAccount account = task.getResult(ApiException.class);
 
+            // Signed in successfully, show authenticated UI.
+            updateUI(account);
+        } catch (ApiException e) {
+            // The ApiException status code indicates the detailed failure reason.
+            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+            Log.w("Pleasw", "signInResult:failed code=" + e.getStatusCode());
+//            updateUI(null);
+        }
+    }
 
+    private void updateUI(GoogleSignInAccount account) {
+//        startActivity(new Intent(this,MainActivity.class));
+        loginGP(account);
+    }
 
 
     @Override
@@ -113,10 +109,10 @@ private List<User_info> infoList=new ArrayList<>();
                 .requestEmail()
                 .build();
 // Build a GoogleSignInClient with the options specified by gso.
-//        googleSignInClient = GoogleSignIn.getClient(this, gso);
-        apiClient = new GoogleApiClient.Builder(this)
-                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-                .build();
+        googleSignInClient = GoogleSignIn.getClient(this, gso);
+//        apiClient = new GoogleApiClient.Builder(this)
+//                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+//                .build();
 // Check for existing Google Sign In account, if the user is already signed in
 // the GoogleSignInAccount will be non-null.
 
@@ -126,8 +122,7 @@ private List<User_info> infoList=new ArrayList<>();
         btngp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(apiClient);
-                startActivityForResult(signInIntent, 101);
+             signin();
             }
         });
 
@@ -165,6 +160,10 @@ private List<User_info> infoList=new ArrayList<>();
         });
     }
 
+    private void signin() {
+        Intent signInIntent = googleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
 
 
     @Override

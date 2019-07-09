@@ -68,6 +68,7 @@ private env db=new env();
 private  boolean doublePress=false;
 public static  boolean aktif=false;
 private GoogleApiClient apiClient;
+    private static final String SHOWCASE_ID = "sequence example";
 
 public static final String GOOGLE_ACCOUNT = "google_account";
     //private TapTargetSequence sequence;
@@ -99,52 +100,54 @@ private TapTargetSequence sequence;
         //simpan intro
         SharedPreferences sharedPreferences=this.getSharedPreferences("INTRO", Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor=sharedPreferences.edit();
-        sequence = new TapTargetSequence(this)
-                .targets(
-                        TapTarget.forView(menubawah.findViewById(R.id.katalog), "Halaman Beranda", "Tap Disini Untuk melihat Katalog Barang Dan Jenis Barang (Tap Untuk Refresh )")
-                                .outerCircleColor(R.color.colorPrimary)
-                                .transparentTarget(true),
-                        TapTarget.forView(menubawah.findViewById(R.id.baru), "Halaman Barang Baru", "Tap Disini Untuk melihat Update 100 Barang Terbaru (Tap Untuk Refresh )")
-                                .outerCircleColor(R.color.merah)
-                                .transparentTarget(true),
-                        TapTarget.forView(menubawah.findViewById(R.id.pemesanan), "Halaman Pemesanan", "Tap Disini Untuk melihat Barang Yang Telah Dipesan Dan Melakukan Pembelian (Tap Untuk Refresh )")
-                                .outerCircleColor(R.color.hijauWA)
-                                .transparentTarget(true),
-                        TapTarget.forView(menubawah.findViewById(R.id.transaksi), "Halaman Terbayar", "Tap Disini Untuk melihat Barang Yang telah anda Beli , Silahkan Konfirmasi Terima Bila Sudah menerima Barang (Tap Untuk Refresh )")
-                                .outerCircleColor(R.color.colorAccent)
-                                .transparentTarget(true),
-                        TapTarget.forView(menubawah.findViewById(R.id.akun), "Halaman Profile", "Tap Disini Untuk melihat Profile Dan setting akun Anda (Tap Untuk Refresh )")
-                                .outerCircleColor(R.color.abugelap)
-                                .transparentTarget(true),
-                        TapTarget.forToolbarMenuItem(toolbar, R.id.login, "Ke Halaman Login", "Tap Disini Untuk Login, Login Dulu Untuk Melakukan Transaksi")
-                                .outerCircleColor(R.color.kuning)
-                                .transparentTarget(true),
-                        TapTarget.forToolbarMenuItem(toolbar, R.id.chat, "Ke Halaman Bantuan", "Tap Disini Jika Anda Ingin Bertanya Kepada Admin")
-                                .outerCircleColor(R.color.flic)
-                                .transparentTarget(true),
-                        TapTarget.forToolbarMenuItem(toolbar, R.id.cari, "Ke Halaman Cari ", "Tap Disini Jika Anda Ingin Mencari Barang yang Anda Inginkan")
-                                .outerCircleColor(R.color.colorPrimaryDark)
-                                .transparentTarget(true)
+//        sequence = new TapTargetSequence(this)
+//                .targets(
+//                        TapTarget.forView(menubawah.findViewById(R.id.katalog), "Halaman Beranda", "Tap Disini Untuk melihat Katalog Barang Dan Jenis Barang (Tap Untuk Refresh )")
+//                                .outerCircleColor(R.color.colorPrimary)
+//                                .transparentTarget(true),
+//                        TapTarget.forView(menubawah.findViewById(R.id.baru), "Halaman Barang Baru", "Tap Disini Untuk melihat Update 100 Barang Terbaru (Tap Untuk Refresh )")
+//                                .outerCircleColor(R.color.merah)
+//                                .transparentTarget(true),
+//                        TapTarget.forView(menubawah.findViewById(R.id.pemesanan), "Halaman Pemesanan", "Tap Disini Untuk melihat Barang Yang Telah Dipesan Dan Melakukan Pembelian (Tap Untuk Refresh )")
+//                                .outerCircleColor(R.color.hijauWA)
+//                                .transparentTarget(true),
+//                        TapTarget.forView(menubawah.findViewById(R.id.transaksi), "Halaman Terbayar", "Tap Disini Untuk melihat Barang Yang telah anda Beli , Silahkan Konfirmasi Terima Bila Sudah menerima Barang (Tap Untuk Refresh )")
+//                                .outerCircleColor(R.color.colorAccent)
+//                                .transparentTarget(true),
+//                        TapTarget.forView(menubawah.findViewById(R.id.akun), "Halaman Profile", "Tap Disini Untuk melihat Profile Dan setting akun Anda (Tap Untuk Refresh )")
+//                                .outerCircleColor(R.color.abugelap)
+//                                .transparentTarget(true),
+//                        TapTarget.forToolbarMenuItem(toolbar, R.id.login, "Ke Halaman Login", "Tap Disini Untuk Login, Login Dulu Untuk Melakukan Transaksi")
+//                                .outerCircleColor(R.color.kuning)
+//                                .transparentTarget(true),
+//                        TapTarget.forToolbarMenuItem(toolbar, R.id.chat, "Ke Halaman Bantuan", "Tap Disini Jika Anda Ingin Bertanya Kepada Admin")
+//                                .outerCircleColor(R.color.flic)
+//                                .transparentTarget(true),
+//                        TapTarget.forToolbarMenuItem(toolbar, R.id.cari, "Ke Halaman Cari ", "Tap Disini Jika Anda Ingin Mencari Barang yang Anda Inginkan")
+//                                .outerCircleColor(R.color.colorPrimaryDark)
+//                                .transparentTarget(true)
+//
+//                ).listener(new TapTargetSequence.Listener() {
+//                    @Override
+//                    public void onSequenceFinish() {
+//                        editor.putBoolean("finished", true);
+//                        editor.commit();
+//                    }
+//
+//                    @Override
+//                    public void onSequenceStep(TapTarget lastTarget, boolean targetClicked) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onSequenceCanceled(TapTarget lastTarget) {
+//                        editor.putBoolean("finished", true);
+//                        editor.commit();
+//                    }
+//
+//                });
+//        new Intro
 
-                ).listener(new TapTargetSequence.Listener() {
-                    @Override
-                    public void onSequenceFinish() {
-                        editor.putBoolean("finished", true);
-                        editor.commit();
-                    }
-
-                    @Override
-                    public void onSequenceStep(TapTarget lastTarget, boolean targetClicked) {
-
-                    }
-
-                    @Override
-                    public void onSequenceCanceled(TapTarget lastTarget) {
-                        editor.putBoolean("finished", true);
-                        editor.commit();
-                    }
-
-                });
         boolean isintro_finish = sharedPreferences.getBoolean("finished", false);
         if (!isintro_finish) {
             sequence.start();

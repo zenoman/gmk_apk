@@ -117,7 +117,6 @@
             android:textAllCaps="false"
             android:textColor="@color/putih"
             android:textSize="15sp" />
-
         <TextView
             android:paddingTop="10dp"
             android:layout_width="300dp"
@@ -131,13 +130,10 @@
             android:layout_margin="3dp"
             android:layout_width="300dp"
             android:layout_height="2dp"/>
-
         <com.google.android.gms.common.SignInButton
             android:id="@+id/btngp"
             android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/putih" />
+            android:layout_height="45dp" />
 
         <TextView
             android:id="@+id/btn_back"
