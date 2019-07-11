@@ -153,8 +153,8 @@ private TapTargetSequence sequence;
         if (!isintro_finish) {
             Intent i = new Intent(MainActivity.this, intro.class);
             startActivity(i);
-//            editor.putBoolean("finished",true);
-//            editor.commit();
+            editor.putBoolean("finished",true);
+            editor.commit();
         }
 
         //permission v21 up

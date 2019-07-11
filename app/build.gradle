@@ -22,9 +22,10 @@ android {
             targetSdkVersion 28
             maxSdkVersion 28
             multiDexEnabled = true
-            versionName = '1.7'
-            versionCode = 7
+            versionName = '1.0'
+            versionCode = 1
             minSdkVersion 17
+            applicationId = 'project.com.gmklabel'
         }
     }
     flavorDimensions 'v2'

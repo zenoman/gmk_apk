@@ -19,17 +19,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class env {
     Context context;
-  private static final String CACHE_CONTROL = "Cache-Control";
-  private static  final  String ROOT_URL="http://192.168.0.5:8000/";
-  private static final String ROOT_img="http://192.168.0.5:8000/img/";
+//  private static final String CACHE_CONTROL = "Cache-Control";
+//  private static  final  String ROOT_URL="http://192.168.0.5:8000/";
+//  private static final String ROOT_img="http://192.168.0.5:8000/img/";
 
   // private static final String CACHE_CONTROL = "Cache-Control";
   // private static  final  String ROOT_URL="http://192.168.43.53:8000/";
   // private static final String ROOT_img="http://192.168.43.53:8000/img/";
 
-//  private static final String CACHE_CONTROL = "Cache-Control";
-//  private static  final  String ROOT_URL="https://storetulungagung.com/";
-//  private static final String ROOT_img="https://storetulungagung.com/img/";
+  private static final String CACHE_CONTROL = "Cache-Control";
+  private static  final  String ROOT_URL="https://grosirmurahkediri.com/";
+  private static final String ROOT_img="https://grosirmurahkediri.com/img/";
 
     public static final String url_k =ROOT_URL+"api/";
     public static final String barang_url=ROOT_img+"barang/";
