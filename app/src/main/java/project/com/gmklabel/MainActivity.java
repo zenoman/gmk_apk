@@ -68,6 +68,7 @@ private env db=new env();
 private  boolean doublePress=false;
 public static  boolean aktif=false;
 private GoogleApiClient apiClient;
+private  String pilwa="";
     private static final String SHOWCASE_ID = "sequence example";
 
 public static final String GOOGLE_ACCOUNT = "google_account";
@@ -150,7 +151,10 @@ private TapTargetSequence sequence;
 
         boolean isintro_finish = sharedPreferences.getBoolean("finished", false);
         if (!isintro_finish) {
-            sequence.start();
+            Intent i = new Intent(MainActivity.this, intro.class);
+            startActivity(i);
+//            editor.putBoolean("finished",true);
+//            editor.commit();
         }
 
         //permission v21 up
@@ -223,11 +227,19 @@ private TapTargetSequence sequence;
                 break;
             case R.id.chat:
                 boolean inswa=instaledWap("com.whatsapp");
-                if(!inswa){
-                    Toast.makeText(this, "Anda Harus Install Whatsapp Dulu!", Toast.LENGTH_SHORT).show();
-                }else {
+                boolean inwb=instaledWap("com.whatsapp.w4b");
+                if(inswa==true){
+                    pilwa="wa";
                     String sendWa = "*Saya Perlu Bantuan*";
                     pilihNope(sendWa);
+                    break;
+                }else if(inwb==true){
+                    pilwa="wb";
+                    String sendWa = "*Saya Perlu Bantuan*";
+                    pilihNope(sendWa);
+                    break;
+                }else {
+                    Toast.makeText(this, "Anda Harus Install Whatsapp Dulu!", Toast.LENGTH_SHORT).show();
                     break;
                 }
             case R.id.login:
@@ -306,7 +318,11 @@ private TapTargetSequence sequence;
                                 //Transaksi
                                 Intent sendIntent = new Intent("android.intent.action.MAIN");
                                 sendIntent.setAction(Intent.ACTION_VIEW);
-                                sendIntent.setPackage("com.whatsapp");
+                                if(pilwa.equals("wa")){
+                                    sendIntent.setPackage("com.whatsapp");
+                                }else if(pilwa.equals("wb")){
+                                    sendIntent.setPackage("com.whatsapp.w4b");
+                                }
                                 String url = "https://api.whatsapp.com/send?phone=" + tlp + "&text=" + sendWa;
                                 sendIntent.setData(Uri.parse(url));
                                 startActivity(sendIntent);

@@ -27,5 +27,8 @@
     <string name="empty_trans">Belum Ada Transaksi</string>
     <string name="lfb">Login Facebook</string>
     <string name="lgp">Login Google</string>
-
+    <string name="inreg">Daftar Menggunakan Akun Google Anda atau Daftar Memalui Registrasi (Langsung Login Aja Ya Guys Bila Pakai Akun GOOGLE)</string>
+    <string name="inprofile">Lengkapi Profile Anda pada Menu Profile </string>
+    <string name="inbantuan">Jika Anda Perlu Bantuan Silahkan Hubungi admin. Klik Icon Pesan Dipojok kanan Atas </string>
+    <string name="ininf">Sekarang Sistem Gercep ya Guys , Checkout Dulu Langsung Bayar , Barang Bertahan Hanya Maksimal Kurang dari 5 Hari (fleksibel Kebijakan Admin) Menunggu Pembayaran Atau Mungkin Lebih Cepat Lebih Baik \n (SISTEM KEEP DITIADAKAN)</string>
 </resources>

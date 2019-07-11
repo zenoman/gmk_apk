@@ -75,7 +75,7 @@ public class Keranjang extends Fragment {
     private  User_info info;
     private Alamat_tujuan tujuan;
     private MaterialSpinner metod,rek;
-
+    private  String pilwa="";
 
     public Keranjang() {
         // Required empty public constructor
@@ -122,10 +122,10 @@ public class Keranjang extends Fragment {
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
                     if(checkedId==R.id.alamat_drop){
                         ly_alamat.setVisibility(View.VISIBLE);
-                        alamat_lengkap="Nama : "+tujuan.getNama()+"Alamat : "+tujuan.getAlamat()+" " +tujuan.getKodepos()+"\n"+tujuan.getKota()+" "+tujuan.getProvinsi();
+                        alamat_lengkap="Nama : "+tujuan.getNama()+" Alamat : "+tujuan.getAlamat()+" " +tujuan.getKodepos()+"\n"+tujuan.getKota()+" "+tujuan.getProvinsi();
                     }else if(checkedId==R.id.alamat_asli){
                         ly_alamat.setVisibility(View.GONE);
-                        alamat_lengkap="Nama : "+info.getNama()+"Alamat : "+info.getAlamat()+" " +info.getKodepos()+"\n"+info.getKota()+" "+info.getProvinsi();
+                        alamat_lengkap="Nama : "+info.getNama()+" Alamat : "+info.getAlamat()+" " +info.getKodepos()+"\n"+info.getKota()+" "+info.getProvinsi();
                     }
                 }
             });
@@ -181,13 +181,15 @@ public class Keranjang extends Fragment {
 
                     int ceckedI=Rg.getCheckedRadioButtonId();
                     if(mtd.equals("")){
-                        
+                        Toast.makeText(getContext(), "Metode Pembayaran Belum Dipilih", Toast.LENGTH_SHORT).show();
                     }else{
                         if(ceckedI==R.id.alamat_drop){
                             saveDrop();
                             boolean inWa=instaledWap("com.whatsapp");
+                            boolean inwb=instaledWap("com.whatsapp.w4b");
                             if(inWa==true){
                                // vTujuan();
+                                pilwa="wa";
                                 alamat_lengkap=" "+nama.getText().toString()+"  "+alamt.getText().toString()+"  " +pos.getText().toString()+"  " +kota.getText().toString()+"   "+prov.getText().toString();
                                 if(mtd.equals("pesan")){
                                     if(kodb.equals("")){
@@ -200,12 +202,27 @@ public class Keranjang extends Fragment {
                                     getDetail();
                                 }
 
+                            }else if(inwb==true){
+                                pilwa="wb";
+                                alamat_lengkap=" "+nama.getText().toString()+"  "+alamt.getText().toString()+"  " +pos.getText().toString()+"  " +kota.getText().toString()+"   "+prov.getText().toString();
+                                if(mtd.equals("pesan")){
+                                    if(kodb.equals("")){
+                                        Toast.makeText(getContext(), "Pilih Bank Dahulu", Toast.LENGTH_SHORT).show();
+                                    }else{
+                                        getDetail();
+                                    }
+                                }else{
+                                    kodb="";
+                                    getDetail();
+                                }
                             }else{
                                 Toast.makeText(getContext(), "Anda Belum Install Whatsapp", Toast.LENGTH_SHORT).show();
                             }
                         }else if(ceckedI==R.id.alamat_asli){
                             boolean inWa=instaledWap("com.whatsapp");
+                            boolean inwb=instaledWap("com.whatsapp.w4b");
                             if(inWa==true){
+                                pilwa="wa";
                                 if(User_config.getmInstance(getContext()).iscekNama()||User_config.getmInstance(getContext()).iscekAlamat()){
                                     alamat_lengkap=""+info.getNama()+"  "+info.getAlamat()+" " +info.getKodepos() + " " + info.getKota()+"  "+info.getProvinsi();
                                     if(mtd.equals("pesan")){
@@ -222,6 +239,23 @@ public class Keranjang extends Fragment {
                                     Toast.makeText(getContext(), "Anda Harus Melengkapi Profile Dulu", Toast.LENGTH_SHORT).show();
                                 }
                                
+                            }else if(inwb==true){
+                                pilwa="wb";
+                                if(User_config.getmInstance(getContext()).iscekNama()||User_config.getmInstance(getContext()).iscekAlamat()){
+                                    alamat_lengkap=""+info.getNama()+"  "+info.getAlamat()+" " +info.getKodepos() + " " + info.getKota()+"  "+info.getProvinsi();
+                                    if(mtd.equals("pesan")){
+                                        if(kodb.equals("")){
+                                            Toast.makeText(getContext(), "Pilih Bank Dahulu", Toast.LENGTH_SHORT).show();
+                                        }else{
+                                            getDetail();
+                                        }
+                                    }else{
+                                        kodb="";
+                                        getDetail();
+                                    }
+                                }else{
+                                    Toast.makeText(getContext(), "Anda Harus Melengkapi Profile Dulu", Toast.LENGTH_SHORT).show();
+                                }
                             }
                         }
                     }
@@ -374,7 +408,11 @@ public class Keranjang extends Fragment {
                              //Transaksi
                              Intent sendIntent = new Intent("android.intent.action.MAIN");
                              sendIntent.setAction(Intent.ACTION_VIEW);
-                             sendIntent.setPackage("com.whatsapp");
+                             if(pilwa.equals("wa")){
+                                 sendIntent.setPackage("com.whatsapp");
+                             }else if(pilwa.equals("wb")){
+                                 sendIntent.setPackage("com.whatsapp.w4b");
+                             }
                              String url = "https://api.whatsapp.com/send?phone=" + tlp + "&text=" + sendWa;
                              sendIntent.setData(Uri.parse(url));
                              startActivity(sendIntent);

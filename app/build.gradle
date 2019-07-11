@@ -17,15 +17,15 @@ android {
         }
     }
     productFlavors {
-    gmkl {
-        dimension = 'v2'
-        targetSdkVersion 28
-        maxSdkVersion 28
-        multiDexEnabled = true
-        versionName = '1.7'
-        versionCode = 7
-        minSdkVersion 17
-    }
+        gmkl {
+            dimension = 'v2'
+            targetSdkVersion 28
+            maxSdkVersion 28
+            multiDexEnabled = true
+            versionName = '1.7'
+            versionCode = 7
+            minSdkVersion 17
+        }
     }
     flavorDimensions 'v2'
 }
@@ -68,3 +68,4 @@ dependencies {
 //////        instagramClientSecret: "your instagram client secret",
 //////        instagramRedirectUrl : "your instagram redirect url"
 ////]
+

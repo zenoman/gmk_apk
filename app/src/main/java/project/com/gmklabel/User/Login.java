@@ -254,7 +254,7 @@ private List<User_info> infoList=new ArrayList<>();
         user=account.getEmail();
         pass=account.getEmail();
         email=account.getEmail();
-        telp="-";
+        telp=account.getId();
         dialog.show();
 
         Model model=db.getRespo().create(Model.class);

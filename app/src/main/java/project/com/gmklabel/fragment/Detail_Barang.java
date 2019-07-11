@@ -69,7 +69,7 @@ private Button checkout;
 private User_info user_info;
 private RecyclerViewClickListener clickListener,clickVar;
 private Context context;
-
+    private User_info User=User_config.getmInstance(this).getUser();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +98,10 @@ private Context context;
                 if(User_config.getmInstance(Detail_Barang.this).isLogedIn()) {
                     String jml = qty.getNumber().toString();
                     simpanPesan(jml);
-                }else{
+                }else if(user_info.getAlamat().equals("")||user_info.getNama().equals("")||user_info.getKodepos().equals("")|| user_info.getKota().equals("")||user_info.getProvinsi().equals("")||user_info.getTelp().equals("")){
+                    Toast.makeText(Detail_Barang.this, "Lengkapi Profile Anda Dulu", Toast.LENGTH_SHORT).show();
+                }
+                else{
                     Toast.makeText(Detail_Barang.this, "Anda Harus Login Dulu", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -131,7 +134,6 @@ private Context context;
         rv_size.setLayoutManager(managerCsize);
         rv_size.setAdapter(adapterCsize);
         rv_size.setItemAnimator(new DefaultItemAnimator());
-
         sdesk=getIntent().getStringExtra("desk");
         skode=getIntent().getStringExtra("kode");
         hargaf=getIntent().getStringExtra("hargaf");
