@@ -169,11 +169,11 @@ public class Adapter_produk extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 @Override
                 public void onResourceReady(@NonNull Bitmap bitmap, @Nullable Transition<? super Bitmap> transition) {
                     File sdcard=Environment.getExternalStorageDirectory();
-                    File dirk=new File(sdcard+"/TASTORE");
+                    File dirk=new File(sdcard+"/GMK");
                     if(!dirk.exists()) {
                         dirk.mkdirs();
                     }
-                    File image_ku=new File(sdcard+"/TASTORE/"+"TASTORE"+System.currentTimeMillis()+".jpg");
+                    File image_ku=new File(sdcard+"/GMK/"+"GMK"+System.currentTimeMillis()+".jpg");
                     File dir=image_ku.getParentFile();
                     try{
                         if(!dir.mkdirs()&&(!dir.exists()||!dir.isDirectory())){
@@ -189,7 +189,7 @@ public class Adapter_produk extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         context.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,contentValues);
                         dialog.dismiss();
                         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                        builder.setMessage("Gambar Berhasil Di Download Cari Di Galeri atau Folder TASTORE Memori Anda")
+                        builder.setMessage("Gambar Berhasil Di Download Cari Di Galeri atau Folder GMK Memori Anda")
                                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -215,11 +215,11 @@ public class Adapter_produk extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 @Override
                 public void onResourceReady(@NonNull Bitmap bitmap, @Nullable Transition<? super Bitmap> transition) {
                     File sdcard=Environment.getExternalStorageDirectory();
-                    File dirk=new File(sdcard+"/TASTORE");
+                    File dirk=new File(sdcard+"/GMK");
                     if(!dirk.exists()) {
                         dirk.mkdirs();
                     }
-                    File image_ku=new File(sdcard+"/TASTORE/"+"TASTORE"+System.currentTimeMillis()+".jpg");
+                    File image_ku=new File(sdcard+"/GMK/"+"GMK"+System.currentTimeMillis()+".jpg");
                     File dir=image_ku.getParentFile();
                     try{
                         if(!dir.mkdirs()&&(!dir.exists()||!dir.isDirectory())){
