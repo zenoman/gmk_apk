@@ -142,7 +142,20 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded_button"
             android:layout_width="300dp"
+            android:layout_margin="5dp"
             android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/daftar_g"
+            android:textAlignment="center"
+            android:textColor="@color/bir" />
+        <com.google.android.gms.common.SignInButton
+            android:layout_marginTop="5dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"/>
         <TextView
             android:text="@string/lengkap"
             android:padding="10dp"

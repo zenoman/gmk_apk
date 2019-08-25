@@ -136,6 +136,7 @@
             android:layout_height="45dp" />
 
         <TextView
+
             android:id="@+id/btn_back"
             android:textColor="@color/bir"
             android:paddingTop="15dp"
