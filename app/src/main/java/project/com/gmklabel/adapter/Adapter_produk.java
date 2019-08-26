@@ -2,6 +2,8 @@ package project.com.gmklabel.adapter;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,6 +22,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
@@ -118,6 +121,16 @@ public class Adapter_produk extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 context.startActivity(intent);
             }
         });
+//        copy produk
+        holder.bcopas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("copy",holder.desk.toString());
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(context, "Deskripsi Telah Di Copy", Toast.LENGTH_SHORT).show();
+            }
+        });
         }catch (Exception e){
 
         }
@@ -133,7 +146,7 @@ public class Adapter_produk extends RecyclerView.Adapter<RecyclerView.ViewHolder
         private TextView tv_kode,tv_barang,tv_harga,url;
         private ImageView img;
         private Button beli;
-        private ImageButton download,share;
+        private ImageButton download,share,bcopas;
         private String desk,diskon,image_share,level;
         private User_info info=User_config.getmInstance(context).getUser();
 
@@ -147,6 +160,7 @@ public class Adapter_produk extends RecyclerView.Adapter<RecyclerView.ViewHolder
             download=(ImageButton) view.findViewById(R.id.down);
             share=(ImageButton) view.findViewById(R.id.share);
             url=(TextView) view.findViewById(R.id.link_image);
+            bcopas=(ImageButton) view.findViewById(R.id.copas);
             share.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -159,6 +173,7 @@ public class Adapter_produk extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     downloadImage();
                 }
             });
+
         }
 
         private void downloadImage() {

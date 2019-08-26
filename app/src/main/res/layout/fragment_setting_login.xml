@@ -37,7 +37,6 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
         <EditText
-            android:enabled="false"
             android:id="@+id/telp"
             android:layout_marginTop="3dp"
             android:background="@drawable/rounded_editext"

@@ -134,6 +134,18 @@
             android:id="@+id/btngp"
             android:layout_width="300dp"
             android:layout_height="45dp" />
+        <View
+            android:background="@color/abu"
+            android:layout_margin="3dp"
+            android:layout_width="300dp"
+            android:layout_height="2dp"/>
+        <Button
+            android:id="@+id/breg"
+            android:layout_width="300dp"
+            android:layout_margin="4dp"
+            android:text="Daftar akun Baru"
+            android:background="@drawable/rounded_button_default"
+            android:layout_height="wrap_content"/>
 
         <TextView
 

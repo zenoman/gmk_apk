@@ -153,6 +153,7 @@
             android:textAlignment="center"
             android:textColor="@color/bir" />
         <com.google.android.gms.common.SignInButton
+            android:id="@+id/bsign"
             android:layout_marginTop="5dp"
             android:layout_width="300dp"
             android:layout_height="wrap_content"/>

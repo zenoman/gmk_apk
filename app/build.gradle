@@ -22,8 +22,8 @@ android {
             targetSdkVersion 28
             maxSdkVersion 28
             multiDexEnabled = true
-            versionName = '1.3'
-            versionCode = 35
+            versionName = '1.4'
+            versionCode = 37
             minSdkVersion 17
             applicationId = 'com.gmk.taufiqismael.gmk_17'
         }

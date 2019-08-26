@@ -86,7 +86,6 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-
                     <ImageButton
                         android:id="@+id/down"
                         android:layout_width="wrap_content"
@@ -95,9 +94,16 @@
                         android:src="@drawable/ic_arrowdown"
                         android:text="Download"
                         android:textAllCaps="false" />
-
                     <ImageButton
-                        android:src="@drawable/ic_share"
+                        android:id="@+id/copas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:backgroundTint="@color/butoon"
+                        android:src="@drawable/ic_copy"
+                        android:text="Download"
+                        android:textAllCaps="false"/>
+                    <ImageButton
+                        android:src="@drawable/ic_shuffle"
                         android:id="@+id/share"
                         android:backgroundTint="@color/butoon"
                         android:layout_width="wrap_content"
@@ -106,6 +112,7 @@
                     <Button
                         android:id="@+id/Beli"
                         android:text="Lihat"
+                        android:layout_marginLeft="3dp"
                         android:textAllCaps="false"
                         android:textColor="@color/putih"
                         android:background="@drawable/rounded_button"

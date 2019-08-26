@@ -46,7 +46,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Login extends AppCompatActivity  {
-private Button btn_login;
+private Button btn_login,breg;
 private SignInButton btngp;
 private Toolbar toolbar;
 private TextView tv_register,btn_back;
@@ -100,6 +100,7 @@ private List<User_info> infoList=new ArrayList<>();
         btn_back=(TextView) findViewById(R.id.btn_back);
         tv_register=(TextView) findViewById(R.id.daftar);
         ck=(CheckBox) findViewById(R.id.ck);
+        breg=(Button) findViewById(R.id.breg);
         btngp=(SignInButton) findViewById(R.id.btngp);
 //        ===================================================================
 //        Google Login
@@ -156,6 +157,14 @@ private List<User_info> infoList=new ArrayList<>();
             public void onClick(View v) {
                 finish();
                 startActivity(new Intent(Login.this,MainActivity.class));
+            }
+        });
+        breg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Login.this,Register.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -291,11 +300,12 @@ private List<User_info> infoList=new ArrayList<>();
                     }else if(st.equals("0")){
                         dialog.dismiss();
                         Toast.makeText(Login.this,msg,Toast.LENGTH_SHORT).show();
-                    }else if(st.equals("2")){
-//                        daftarkan User
-                        daftar(user,pass,email,telp,account);
-                        dialog.dismiss();
                     }
+//                    else if(st.equals("2")){
+////                        daftarkan User
+//                        daftar(user,pass,email,telp,account);
+//                        dialog.dismiss();
+//                    }
                 }else{
                     dialog.dismiss();
                     Toast.makeText(Login.this,msg,Toast.LENGTH_SHORT).show();
